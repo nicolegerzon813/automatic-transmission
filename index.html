@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Hosting check — placeholder</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wrap">
+  <h1>Hosting check</h1>
+  <p>This is a placeholder — not the real site. It exists to confirm GitHub Pages serves everything the real
+    site needs before that goes up. If every row below says <span class="ok">OK</span>, the real site's folder
+    structure will work here without changes.</p>
+
+  <ul class="checklist" id="checklist">
+    <li id="check-css">CSS file loaded (styles.css) — <span class="status">checking…</span></li>
+    <li id="check-fetch">fetch() of a JSON file (data/status.json) — <span class="status">checking…</span></li>
+    <li id="check-image">Image in a subfolder (images/placeholder.svg) — <span class="status">checking…</span></li>
+    <li id="check-js">External JS file executed (js/check.js) — <span class="status">checking…</span></li>
+  </ul>
+
+  <div class="css-probe" id="css-probe"></div>
+  <img class="image-probe" id="image-probe" src="images/placeholder.svg" alt="test image" width="60" height="60">
+
+  <p class="note">Safe to make this repo/Pages URL public early — there's nothing here from the real site, and
+    the noindex tag + robots.txt ask search engines not to index it.</p>
+</div>
+
+<script src="js/check.js"></script>
+</body>
+</html>

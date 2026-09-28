@@ -1,0 +1,25 @@
+body{
+  margin:0; background:#FBF8F2; color:#1E2B2E;
+  font-family:'IBM Plex Mono', ui-monospace, monospace;
+  padding:60px 20px;
+}
+.wrap{ max-width:640px; margin:0 auto; }
+h1{ font-size:1.6rem; }
+p{ line-height:1.6; }
+.checklist{ list-style:none; padding:0; margin:24px 0; }
+.checklist li{
+  padding:12px 14px; border:1px solid #DAD5C8; border-radius:4px; margin-bottom:8px;
+  font-size:13.5px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+}
+.status{ font-weight:600; }
+.ok{ color:#1F9A8F; font-weight:600; }
+.fail{ color:#C1443C; font-weight:600; }
+
+/* This box only turns teal if styles.css actually loaded — its color
+   comes from this file, so a grey/unstyled box means CSS failed. */
+.css-probe{
+  width:60px; height:60px; background:#2EC4B6; border-radius:4px; margin:16px 0;
+  display:inline-block;
+}
+.image-probe{ display:inline-block; margin-left:12px; vertical-align:top; border:1px solid #DAD5C8; }
+.note{ font-size:12px; color:#56666A; margin-top:30px; }
