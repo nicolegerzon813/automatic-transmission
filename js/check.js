@@ -37,3 +37,22 @@ function setStatus(id, passed){
   el.textContent = passed ? 'OK' : 'FAILED';
   el.className = 'status ' + (passed ? 'ok' : 'fail');
 }
+
+// Check #5: PDF embed. There's no load/error event we can rely on for
+// <embed> across browsers, so this checks the one thing we *can*
+// measure: whether the plugin gave the element any real size at all.
+// A collapsed 0-height box strongly suggests the browser couldn't
+// render the PDF inline (the known risk case flagged earlier: some
+// mobile browsers show a blank embed instead of the PDF viewer).
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const pdf = document.getElementById('pdf-probe');
+    const rendered = pdf.offsetHeight > 0 && pdf.clientWidth > 0;
+    setStatus('check-pdf', rendered);
+    if (!rendered) {
+      document.querySelector('#check-pdf .status').closest('li')
+        .insertAdjacentHTML('beforeend',
+          '<div style="width:100%;font-weight:normal;font-size:11.5px;margin-top:4px;">This only confirms the element rendered with a size — it can\'t confirm the PDF content itself displayed. If this fails on mobile specifically, that matches a known limitation; the fallback is linking out to open the PDF in a new tab instead of embedding it.</div>');
+    }
+  }, 400); // slight delay lets the PDF plugin finish initializing before we measure it
+});
